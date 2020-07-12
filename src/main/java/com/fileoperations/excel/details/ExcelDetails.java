@@ -9,22 +9,17 @@ public class ExcelDetails {
 
 	private static final String ALL_SHEETS = "ALL";
 
-	private String filePath;
 	private String fileName;
 	private boolean applySameStyleForAllSheets;
 	private Map<String, SheetStyleDetails> sheetStyleDetails;
 	private Map<String, SheetDataDetails> sheetDataDetails;
 
-	public ExcelDetails(String filePath, String fileName) {
+	public ExcelDetails(String fileName) {
 		super();
-		this.filePath = filePath;
 		this.fileName = fileName;
 		applySameStyleForAllSheets = false;
 		sheetStyleDetails = new HashMap<>();
 		sheetDataDetails = new HashMap<>();
-	}
-	public String getFilePath() {
-		return filePath;
 	}
 
 	public String getFileName() {
