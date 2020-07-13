@@ -1,9 +1,10 @@
-package com.fileoperations.excel;
+package com.myproject;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import com.fileoperations.excel.ExcelWriter;
 import com.fileoperations.excel.details.ExcelDetails;
 
 public class ExcelWriterMain {
@@ -17,7 +18,7 @@ public class ExcelWriterMain {
 
 	static ExcelDetails getExcelDetails() {
 		String fileName = "testFile";
-		ExcelDetails excelDetails = new ExcelDetails(fileName);
+		ExcelDetails excelDetails = new ExcelDetails("", fileName);
 		createAndAddSheetDetails(excelDetails, fileName);
 		createAndAddSheetDetails(excelDetails, (fileName + "1"));
 

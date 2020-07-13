@@ -18,8 +18,7 @@ import com.fileoperations.excel.details.ExcelDetails;
 import com.fileoperations.excel.details.SheetStyleDetails;
 
 public class ExcelWriter {
-
-	private static final String FILE_EXTENSION = ".xlsx"; 
+	private static final String FILE_EXTENSION = ".xlsx";
 	// Create a Workbook
 	private Workbook workbook;
 
