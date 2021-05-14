@@ -45,7 +45,7 @@ public class ExcelReader {
 		workbook = WorkbookFactory.create(new File(filePath + fileName + FILE_EXTENSION));
 	}
 
-	private void readSheetHeader(ExcelDetails excelDetails, Sheet sheet) {
+	private void readSheetHeader(final ExcelDetails excelDetails, Sheet sheet) {
 		int firstRowNum = sheet.getFirstRowNum();
 		String sheetName = sheet.getSheetName();
 		List<String> headers = ExcelDataAdapter.adapt(sheet.getRow(firstRowNum));

@@ -8,6 +8,7 @@ import com.fileoperations.excel.ExcelWriter;
 import com.fileoperations.excel.details.ExcelDetails;
 
 public class ExcelWriterMain {
+	private static final String PATH = "/Users/chaurea/Downloads/";
 
 	public static void main(String[] args) {
 
@@ -18,7 +19,8 @@ public class ExcelWriterMain {
 
 	static ExcelDetails getExcelDetails() {
 		String fileName = "testFile";
-		ExcelDetails excelDetails = new ExcelDetails("", fileName);
+//		ExcelDetails excelDetails = new ExcelDetails("", fileName);
+		ExcelDetails excelDetails = new ExcelDetails(PATH, fileName);
 		createAndAddSheetDetails(excelDetails, fileName);
 		createAndAddSheetDetails(excelDetails, (fileName + "1"));
 

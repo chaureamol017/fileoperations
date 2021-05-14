@@ -138,7 +138,7 @@ public class ExcelWriter {
 
 	private void writeWorkbook() throws FileNotFoundException, IOException {
 		// Write the output to a file
-		String fileName = excelDetails.getFileName() + FILE_EXTENSION;
+		String fileName = excelDetails.getFilePath() + excelDetails.getFileName() + FILE_EXTENSION;
 		FileOutputStream fileOut = new FileOutputStream(fileName);
 		workbook.write(fileOut);
 		fileOut.close();

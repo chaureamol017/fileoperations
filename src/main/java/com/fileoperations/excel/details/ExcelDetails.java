@@ -1,6 +1,7 @@
 package com.fileoperations.excel.details;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -23,6 +24,7 @@ public class ExcelDetails {
 		sheetStyleDetails = new HashMap<>();
 		sheetDataDetails = new HashMap<>();
 	}
+
 	public String getFilePath() {
 		return filePath;
 	}
@@ -112,6 +114,10 @@ public class ExcelDetails {
 		}
 	}
 
+	public void addData(String sheetName, String cell) {
+		addData(sheetName, new ArrayList<>(Arrays.asList(cell)));
+	}
+
 	public void addData(String sheetName, List<String> row) {
 		SheetDataDetails sheetData = sheetDataDetails.get(sheetName);
 		if (sheetData != null) {
@@ -145,4 +151,24 @@ public class ExcelDetails {
 		sheetStyleDetails.put(sheetName, sheetStyle);
 	}
 
+	
+
+	public void writeToConsole() {
+		List<String> allSheetNames = getAllSheetNames();
+		System.out.println("File Name: " + getFileName());
+		System.out.println("Number of sheets: " + allSheetNames.size());
+		for (String sheetName : allSheetNames) {
+			List<String> headers = getSheetHeaders(sheetName);
+
+			System.out.println("");
+			System.out.println("Sheet Name: " + sheetName);
+			System.out.println("Sheet headers");
+			System.out.println(headers);
+			System.out.println("Sheet data");
+//			System.out.println(excelDetails.getSheetData(sheetName));
+			for (List<String> row : getSheetData(sheetName)) {
+				System.out.println(row);
+			}
+		}
+	}
 }
